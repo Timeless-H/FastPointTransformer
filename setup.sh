@@ -4,13 +4,13 @@ SERVER=${2:-local}
 
 if [[ $SERVER = *local* ]]; then
     echo "[FPT INFO] Running on Local: You should manually load modules..."
-    conda init zsh
-    source /opt/anaconda3/etc/profile.d/conda.sh # you may need to modify the conda path.
+    conda init bash
+    source /miniconda/etc/profile.d/conda.sh # you may need to modify the conda path.
     export CUDA_HOME=/usr/local/cuda-11.1
 else
     echo "[FPT INFO] Running on Server..."
     conda init bash
-    source ~/anaconda3/etc/profile.d/conda.sh
+    source ~/miniconda/etc/profile.d/conda.sh
 
     module purge
     module load autotools 
