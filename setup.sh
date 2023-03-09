@@ -48,10 +48,12 @@ else
     pip install lightning-bolts
     pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.0+cu111.html
     echo "[FPT INFO] Done."
+    
+    echo $PWD
 
     echo "[FPT INFO] Installing MinkowskiEngine..."
     cd thirdparty/MinkowskiEngine
-    python setup.py install --blas_include_dirs=/miniconda/envs/fpt/include --blas=openblas --force_cuda
+    python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas --force_cuda
     cd ../..
     echo "[FPT INFO] Done."
 
