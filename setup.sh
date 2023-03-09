@@ -50,6 +50,8 @@ else
     echo "[FPT INFO] Done."
     
     echo $PWD
+    echo $ENVS
+    echo $1
 
     echo "[FPT INFO] Installing MinkowskiEngine..."
     cd thirdparty/MinkowskiEngine
