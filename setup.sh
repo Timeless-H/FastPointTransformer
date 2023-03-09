@@ -10,7 +10,7 @@ if [[ $SERVER = *local* ]]; then
 else
     echo "[FPT INFO] Running on Server..."
     conda init bash
-    source ~/miniconda/etc/profile.d/conda.sh
+    source /miniconda/etc/profile.d/conda.sh
 
     module purge
     module load autotools 
@@ -51,7 +51,7 @@ else
 
     echo "[FPT INFO] Installing MinkowskiEngine..."
     cd thirdparty/MinkowskiEngine
-    python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas --force_cuda
+    python setup.py install --blas_include_dirs=/miniconda/envs/fpt/include --blas=openblas --force_cuda
     cd ../..
     echo "[FPT INFO] Done."
 
